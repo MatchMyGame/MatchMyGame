@@ -1,0 +1,46 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* fin de page */
+#footer{
+	position: relative;
+	top: 200px;
+	border: 3px white groove;
+width:100%;
+height:auto;
+margin:auto;
+background: #272727;
+padding: 40px 0px; 
+text-align: center;
+font-size: 0.20em;
+font-family:Arial;
+color:white;}
+
+/*Point texte pour remonter au top de la page et non la moitiée*/
+#remonter{
+	color: black;
+	position: relative;
+	top: 100px;
+	left: 40px;
+}
