@@ -1,12 +1,19 @@
+/*Page fond/taille/texte*/
+body{
+	background-color: #786D5F
+	
+	
+}
 
 
-
-
-
-
-
-
-
+.vertical-line
+{ position: right;
+  
+ width:5px;
+ border-left:1px solid gray;
+ height:100px;
+ color: black;
+}
 
 
 
@@ -33,9 +40,10 @@ margin:auto;
 background: #272727;
 padding: 40px 0px; 
 text-align: center;
-font-size: 0.20em;
+font-size: 1em;
 font-family:Arial;
-color:white;}
+color:white;
+}
 
 /*Point texte pour remonter au top de la page et non la moitiée*/
 #remonter{
@@ -43,4 +51,5 @@ color:white;}
 	position: relative;
 	top: 100px;
 	left: 40px;
-}
+
+
