@@ -1,18 +1,23 @@
-/*Page fond/taille/texte*/
-body{
-	background-color: #786D5F
-	
-	
+*{
+  margin:0;
+  padding:0;
 }
-
-
-.vertical-line
-{ position: right;
+ body, html{height:100%;}
+ body{
+  text-align:center;
+}
+#main{
   
- width:5px;
- border-left:1px solid gray;
- height:100px;
- color: black;
+  margin:0 auto;
+}
+
+footer{
+ background-color:#272727;
+ position:absolute;
+ bottom:0;
+ width:100%;
+ padding-top:50px;
+ height:50px;
 }
 
 
@@ -29,27 +34,10 @@ body{
 
 
 
-/* fin de page */
-#footer{
-	position: relative;
-	top: 200px;
-	border: 3px white groove;
-width:100%;
-height:auto;
-margin:auto;
-background: #272727;
-padding: 40px 0px; 
-text-align: center;
-font-size: 1em;
-font-family:Arial;
-color:white;
-}
 
-/*Point texte pour remonter au top de la page et non la moitiée*/
-#remonter{
-	color: black;
-	position: relative;
-	top: 100px;
-	left: 40px;
+
+
+
+
 
 
