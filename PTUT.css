@@ -23,10 +23,13 @@ footer{
 
 	height: 100%;
 	background-color: black;
-	color: white;
-	width: 50px;
+	color: white;	
 }
+nav a {
+	color: white;
+	padding:30px;
 
+}
 
 
 
