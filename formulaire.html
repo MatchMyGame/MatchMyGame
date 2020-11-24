@@ -1,3 +1,35 @@
+<?php
+session_start();
+include("inc/connexion.inc.php");
+$bdd = connect();
+
+if(isset($_POST['email']) AND isset($_POST['password']) AND !empty($_POST['email']) AND !empty($_POST['password'])) {
+  $email = htmlspecialchars($_POST['email']);
+  $getmatchinguser = $bdd->query("SELECT * FROM users WHERE `mail` = '$email'");
+  if($getmatchinguser->rowCount() == 1){
+    $user = $getmatchinguser->fetch();
+      if(password_verify($_POST['password'], $user['password'])){
+        $_SESSION['id'] = $user['id'];
+        $_SESSION['mail'] = $user['mail'];
+        $_SESSION['fullname'] = $user['fullname'];
+        $_SESSION['role'] = $user['role'];
+        $_SESSION['bio'] = $user['bio'];
+        $_SESSION['username'] = $user['username'];
+        $_SESSION['imgpp'] = $user['imgpp'];
+        if(!empty($_GET['uri'])){
+          Header('Location: '.urldecode($_GET['uri']));
+        }else{
+          Header("Location: index.php");
+        }
+      }else{
+        $error = "Mot de passe incorect.";
+      }
+  }else{
+    $error = "Aucun utilisateur correspondant.";
+  }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
