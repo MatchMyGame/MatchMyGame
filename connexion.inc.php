@@ -11,8 +11,5 @@ function connect(){
         die("Erreur de connexion à la base de données !");
     }
 }
-function close(){
-    global $bdd;
-    $dbh = null;
-}
+
 ?>

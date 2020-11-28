@@ -14,11 +14,11 @@
 
 footer{
  background-color:#272727;
- position:absolute;
  bottom:0;
  width:100%;
- padding-top:50px;
+ padding-top:25px;
  height:50px;
+ margin-top: 50px;
 }
 
 body {
@@ -78,6 +78,34 @@ li {
   list-style: none;
 }
 
+.presentation_jeux {
+  
+  margin: 0 auto;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+  height: 30%;
+  width: 30%;
+  overflow: hidden;
+}
+
+.presentation_jeux img:hover {
+
+  transform: scale(1.15);
+  transition: ease 0.5s;
+
+}
+.presentation_jeux img{
+
+    transition: ease 0.5s;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+
+}
+
+
+  
 
 
 
