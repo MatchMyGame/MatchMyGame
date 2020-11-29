@@ -38,6 +38,7 @@ if(isset($_POST['mail']) AND isset($_POST['password1']) AND isset($_POST['passwo
     $error = "Cette adresse email est déjà utilisée.";
   }
 }
+print_r($_POST);
 ?>
 
 <!DOCTYPE html>
@@ -53,7 +54,7 @@ if(isset($_POST['mail']) AND isset($_POST['password1']) AND isset($_POST['passwo
 
 <h2>Formulaire d'inscription </h2>
 
-<form action="#">
+<form action="" method="post">
   <fieldset>
     <p><i>Complétez le formulaire. Tout les champs marqué sont obligatoires.</i></p>
     
@@ -107,7 +108,7 @@ if(isset($_POST['mail']) AND isset($_POST['password1']) AND isset($_POST['passwo
       <label for="FIFA"><input id="FIFA" type="checkbox" name="jeux" value="FIFA"> FIFA 21</label>
     </div>
     
-    <button type="submit" class="creer">Créer mon compte !</a> 
+    <input type="submit" name="inscription" value="Je crée mon compte!">
 
 
   </fieldset>

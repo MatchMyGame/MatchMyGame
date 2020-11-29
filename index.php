@@ -1,6 +1,7 @@
-<?php /*
+<?php 
 include('connexion.inc.php');
 $bdd=connect();
+/*
 $getUser=$bdd->query('SELECT * FROM user');
 var_dump ($getUser->errorInfo()); 
 foreach ($getUser->fetchAll() as $data) {
@@ -14,7 +15,7 @@ foreach ($getUser->fetchAll() as $data) {
 
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-<title>PTUT</title>
+<title>MatchMyGame</title>
 <link rel="stylesheet" href="PTUT.css" />
 
 
@@ -53,26 +54,8 @@ foreach ($getUser->fetchAll() as $data) {
 
 
 
-
-
-
-
-
-
-
-
-
-
 	 
-		  <footer>
-		  	<div id="footer"> 
-				<p class="fin">	
-					<a href="#changer">Mentions légales </a>
-					<a href="#contacter"s>Nous contacter</a>
-				</p>
-		    </div> 
-	      </footer>		
-		
+		 <?php include('footer.php') ?>
 		</body>	
 	</div>
 </html>
