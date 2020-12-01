@@ -1,3 +1,32 @@
+<?php
+session_start();
+include("connexion.inc.php");
+$bdd = connect();
+
+if(isset($_POST['mail']) AND isset($_POST['password']) AND !empty($_POST['mail']) AND !empty($_POST['password'])) {
+  $email = htmlspecialchars($_POST['mail']);
+  $getmatchinguser = $bdd->query("SELECT * FROM user WHERE `mail` = '$email'");
+  if($getmatchinguser->rowCount() == 1){
+    $user = $getmatchinguser->fetch();
+      if(password_verify($_POST['password'], $user['password'])){
+        $_SESSION['idUser'] = $user['idUser'];
+        $_SESSION['mail'] = $user['mail'];
+
+        
+          Header("Location: index.php");
+        
+      }else{
+        $error = "Mot de passe incorect.";
+      }
+  }else{
+    $error = "Aucun utilisateur correspondant.";
+  }
+
+}
+var_dump($_SESSION);
+?>
+
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -9,16 +38,19 @@
   <?php include('header.php') ?>
 
 <h2>Se connecter </h2>
-<form action="#">
-  <fieldset>
-      <label for="mail">Adresse mail <em></em></label>
-      <input id="email" type="email" placeholder="" required="" pattern="[a-zA-Z]*.[a-zA-Z]*@gmail.com"><br>
+<form role="form" method="POST">
 
-      <label for="password">Mot de passe</label>
-      <input id="mdp" type="password" placeholder="" required=""><br>
-        
-  </fieldset>
-  
+            <fieldset>
+              <div class="form">
+                <input class="form-input" placeholder="Adresse mail" name="mail" type="mail" autofocus="">
+              </div>
+
+              <div class="form">
+                <input class="form-input" placeholder="Mot de passe" name="password" type="password" value="">
+              </div>
+
+              <input type="submit" name="inscription" value="Se connecter">
+            </fieldset>
 </form>
 
 <a href="formulaire.php"> Je n'ai pas encore de compte </a>

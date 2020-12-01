@@ -1,20 +1,22 @@
-<?php 
+<?php
 session_start();
 include('connexion.inc.php');
-$bdd=connect();
+$bdd=connect(); 
+
+
 
 if(isset($_POST['mail']) AND isset($_POST['password1']) AND isset($_POST['password2']) AND isset($_POST['discord']) AND !empty($_POST['mail']) AND !empty($_POST['password1']) AND !empty($_POST['password2']) AND !empty($_POST['discord'])) {
   $email = htmlspecialchars($_POST['mail']);
   $getmatchinguser = $bdd->query("SELECT * FROM user WHERE `mail` = '$email'");
+  
   if($getmatchinguser->rowCount() == 0){
     if(filter_var($email, FILTER_VALIDATE_EMAIL)) {
       $discord = htmlspecialchars($_POST['discord']);
       $getmatchinguserbyusername = $bdd->query("SELECT * FROM user WHERE `discord` = '$discord'");
       if($getmatchinguserbyusername->rowCount() == 0){
-        if(preg_match( $_POST['discord'])){
           if($_POST['password1'] == $_POST['password2']){
-            $adduser = $bdd->prepare("INSERT INTO user (discord,password,mail,) VALUES(?,?,?)");
-            $adduser->execute(array($username,password_hash($_POST['password1'], PASSWORD_DEFAULT),$email,));
+            $adduser = $bdd->prepare("INSERT INTO user (discord,password,mail) VALUES(?,?,?)");
+            $adduser->execute(array($discord,password_hash($_POST['password1'], PASSWORD_DEFAULT),$email));
             if($adduser){
               $success = "Compte créé !";
             }else{
@@ -23,9 +25,6 @@ if(isset($_POST['mail']) AND isset($_POST['password1']) AND isset($_POST['passwo
           }else{
             $error = "Les mots de passe ne correspondent pas.";
           }
-        }else{
-          $error = "Nom d'utilisateur invalide, vérifiez qu'il comporte uniquement des lettres, chiffres et le caractère \"_\".";
-        }
       }else{
         $error = "Ce pseudo est déjà utilisé :(";
       }
@@ -38,7 +37,181 @@ if(isset($_POST['mail']) AND isset($_POST['password1']) AND isset($_POST['passwo
     $error = "Cette adresse email est déjà utilisée.";
   }
 }
-print_r($_POST);
+
+  
+
+    // On met les variables utilisé dans le code PHP à FALSE (C'est-à-dire les désactiver pour le moment).
+    /*$error = FALSE;
+    $registerOK = FALSE;
+
+        // On regarde si l'utilisateur est bien passé par le module d'inscription
+        if(isset($_POST["inscription"])){
+            
+            // On regarde si tout les champs sont remplis, sinon, on affiche un message à l'utilisateur.
+            if($_POST["discord"] == NULL OR $_POST["mail"] == NULL OR $_POST["password1"] == NULL OR $_POST["password2"] == NULL){
+                
+                // On met la variable $error à TRUE pour que par la suite le navigateur sache qu'il y'a une erreur à afficher.
+                $error = TRUE;
+                
+                // On écrit le message à afficher :
+                $errorMSG = "Tout les champs doivent être remplis !";
+                    
+            }
+            
+            // Sinon, si les deux mots de passes correspondent :
+            elseif($_POST["password1"] == $_POST["password2"]){
+                
+                // On regarde si le mot de passe et le nom de compte n'est pas le même
+                if($_POST["mail"] != $_POST["password1"]){
+                    
+                    // Si c'est bon on regarde dans la base de donnée si le nom de compte est déjà utilisé :
+                    $sql = "SELECT mail FROM user WHERE mail = '".$_POST["mail"]."' ";
+                    $sql = mysql_query($sql);
+                // On compte combien de valeur à pour nom de compte celui tapé par l'utilisateur.
+                $sql = mysql_num_rows($sql);
+                
+                   // Si $sql est égal à 0 (c'est-à-dire qu'il n'y a pas de nom de compte avec la valeur tapé par l'utilisateur
+                   if($sql == 0){
+                   
+                      // Si tout va bien on regarde si le mot de passe n'exède pas 60 caractères.
+                      if(strlen($_POST["password1"] < 60)){
+                      
+                         // Si tout va bien on regarde si le nom de compte n'exède pas 60 caractères.
+                         if(strlen($_POST["mail"] < 60)){
+                         
+                            // Si le nom de compte et le mot de passe sont différent :
+                            if($_POST["mail"] != $_POST["password1"]){
+                         
+                               // Si tout ce passe correctement, on peut maintenant l'inscrire dans la base de données :
+                               $sql = "INSERT INTO user (discord,mail,password) VALUES ('".$_POST["discord"]."','".$_POST["mail"]."','".$_POST["password"]."')";
+                               $sql = mysql_query($sql);
+                               
+                               // Si la requête s'est bien effectué :
+                               if($sql){
+                               
+                                  // On met la variable $registerOK à TRUE pour que l'inscription soit finalisé
+                                  $registerOK = TRUE;
+                                  // On l'affiche un message pour le dire que l'inscription c'est bien déroulé :
+                                  $registerMSG = "Inscription réussie ! Vous êtes maintenant membre du site.";
+                                  
+                                  // On le met des variables de session pour stocker le nom de compte et le mot de passe :
+                                  $_SESSION["mail"] = $_POST["mail"];
+                                  $_SESSION["password"] = $_POST["password1"];
+                                  
+                                  // Comme un utilisateur est différent, on crée des variables de sessions pour "varier" l'utilisateur comme ceci :
+                                  // echo $_SESSION["login"]; (bien entendu avec les balises PHP, sinons cela ne marchera pas.
+                               
+                               }
+                               
+                               // Sinon on l'affiche un message d'erreur (généralement pour vous quand vous testez vos scripts PHP)
+                               else{
+                               
+                                  $error = TRUE;
+                                  
+                                  $errorMSG = "Erreur dans la requête SQL<br/>".$sql."<br/>";
+                               
+                               }
+                            
+                            }
+                            
+                            // Sinon on fais savoir à l'utilisateur qu'il a mis un nom de compte trop long.
+                            else{
+                            
+                               $error = TRUE;
+                               
+                               $errorMSG = "Votre nom compte ne doit pas dépasser <strong>60 caractères</strong> !";
+                               
+                               $login = NULL;
+                               
+                               $pass = $_POST["password1"];
+                            
+                            }
+                         
+                         }
+                      
+                      }
+                      
+                      // Si le mot de passe dépasse 60 caractères on le fait savoir
+                      else{
+                      
+                         $error = TRUE;
+                         
+                         $errorMSG = "Votre mot de passe ne doit pas dépasser <strong>60 caractères</strong> !";
+                         
+                         $login = $_POST["mail"];
+                         
+                         $pass = NULL;
+                      
+                      }
+                   
+                   }
+                   
+                   // Sinon on affiche un message d'erreur lui disant que ce nom de compte est déjà utilisé.
+                   else{
+                   
+                      $error = TRUE;
+                      
+                      $errorMSG = "Le nom de compte <strong>".$_POST["mail"]."</strong> est déjà utilisé !";
+                      
+                      $login = NULL;
+                      
+                      $pass = $_POST["password1"];
+                   
+                   }
+                }
+                
+                // Sinon on fais savoir à l'utilisateur qu'il doit changer le mot de passe ou le nom de compte
+                else{
+                    
+                    $error = TRUE;
+                    
+                    $errorMSG = "Le nom de compte et le mot de passe doivent êtres différents !";
+                    
+                }
+                
+            }
+          
+          // Sinon si les deux mots de passes sont différents :      
+          elseif($_POST["password1"] != $_POST["password2"]){
+          
+             $error = TRUE;
+             
+             $errorMSG = "Les deux mots de passes sont différents !";
+             
+             $login = $_POST["mail"];
+             
+             $pass = NULL;
+          
+          }
+          
+          // Sinon si le nom de compte et le mot de passe ont la même valeur :
+          elseif($_POST["mail"] == $_POST["password1"]){
+          
+             $error = TRUE;
+             
+             $errorMSG = "Le nom de compte et le mot de passe doivent être différents !";
+          
+          }
+            
+        }
+
+    ?>
+
+    <?php
+
+       mysql_close($BDD);
+
+    ?>
+
+    <?php // On affiche les erreurs :
+       if($error == TRUE){ echo "<p>".$errorMSG."</p>"; }
+    ?>
+    <?php // Si l'inscription s'est bien déroulée on affiche le succès :
+       if($registerOK == TRUE){ echo "<p><strong>".$registerMSG."</strong></p>"; }
+    ?>*/
+
+
+    
 ?>
 
 <!DOCTYPE html>
@@ -76,7 +249,7 @@ print_r($_POST);
       <div class="form">
         <label>Confirmez votre mot de passe</label>
         <input class="form-input" placeholder="Confirmer le mot de passe" name="password2" type="password" value="">
-      </div>
+      </div> 
 
       <div>
           <label for="plateforme">Renseigner vos plateformes</label> <br>
