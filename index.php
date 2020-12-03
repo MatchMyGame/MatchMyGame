@@ -1,4 +1,5 @@
 <?php 
+session_start();
 include('connexion.inc.php');
 $bdd=connect();
 /*
@@ -26,7 +27,7 @@ foreach ($getUser->fetchAll() as $data) {
 		
 		<?php include('header.php') ?>
 	
-	<a href="connection.php">Se connecter</a>
+	<a href="login.php">Se connecter</a>
 
 	
 		
