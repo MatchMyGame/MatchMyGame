@@ -12,6 +12,9 @@ if(isset($_POST['mail']) AND isset($_POST['password']) AND !empty($_POST['mail']
         $_SESSION['idUser'] = $user['idUser'];
         $_SESSION['mail'] = $user['mail'];
         $_SESSION['prénom'] = $user['prénom'];
+        $_SESSION['discord'] = $user['discord'];
+        $_SESSION['plateforme'] = $user['plateforme'];
+        $_SESSION['game'] = $user['game'];
 
         
           Header("Location: index.php");

@@ -15,8 +15,14 @@ if(isset($_POST['mail']) AND isset($_POST['password1']) AND isset($_POST['préno
       $getmatchinguserbyusername = $bdd->query("SELECT * FROM user WHERE `discord` = '$discord'");
       if($getmatchinguserbyusername->rowCount() == 0){
           if($_POST['password1'] == $_POST['password2']){
-            $adduser = $bdd->prepare("INSERT INTO user (discord,password,mail,prénom) VALUES(?,?,?,?)");
-            $adduser->execute(array($discord,password_hash($_POST['password1'], PASSWORD_DEFAULT),$email,htmlspecialchars($_POST['prénom'])));
+            if(isset($_POST['plateforme']) AND !empty($_POST['plateforme']) AND isset($_POST['jeux']) AND !empty($_POST['jeux'])){
+                $plat = json_encode($_POST['plateforme']);
+                $jeux = json_encode($_POST['jeux']);
+                 $adduser = $bdd->prepare("INSERT INTO user (discord,password,mail,prénom,plateforme,game) VALUES(?,?,?,?,?,?)");
+                $adduser->execute(array($discord,password_hash($_POST['password1'], PASSWORD_DEFAULT),$email,htmlspecialchars($_POST['prénom']),$plat,$jeux));
+            }else{
+              $error = "Choisissez au moins une plateforme et un jeu !";
+            }
             if($adduser){
               $success = "Compte créé !";
             }else{
@@ -38,20 +44,14 @@ if(isset($_POST['mail']) AND isset($_POST['password1']) AND isset($_POST['préno
   }
 }
 
-    
 ?>
-
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
 <link rel="stylesheet" href="PTUT.css" />
 <link rel="stylesheet" href="formulaire.css" />
-
 <?php include('header.php') ?>
-
-
 
 <h2>Formulaire d'inscription </h2>
 
@@ -98,13 +98,13 @@ if(isset($_POST['mail']) AND isset($_POST['password1']) AND isset($_POST['préno
       <div>
           <label for="plateforme">Renseigner vos plateformes</label> <br>
           
-            <label for="PS4"><input id="fortnite" type="checkbox" name="Plateforme" value="PS4"> PS4</label>
-            <label for="PC"><input id="LOL" type="checkbox" name="Plateforme" value="PC"> PC</label>
-            <label for="XBOX ONE"><input id="COD" type="checkbox" name="Plateforme" value="XBOX ONE"> XBOX ONE</label>
-            <label for="SWITCH"><input id="MH" type="checkbox" name="Plateforme" value="SWITCH">SWITCH</label>
-            <label for="PS5"><input id="OV" type="checkbox" name="Plateforme" value="PS5"> PS5</label>
-            <label for="XBOX SERIE X"><input id="RK" type="checkbox" name="Plateforme" value="XBOX SERIE X"> XBOX SERIE X</label>
-            <label for="XBOX SERIE S"><input id="Among us" type="checkbox" name="Plateforme" value="XBOX SERIE S"> XBOX SERIE S</label>
+            <label for="PS4"><input id="fortnite" type="checkbox" name="plateforme[]" value="PS4"> PS4</label>
+            <label for="PC"><input id="LOL" type="checkbox" name="plateforme[]" value="PC"> PC</label>
+            <label for="XBOX ONE"><input id="COD" type="checkbox" name="plateforme[]" value="XBOX ONE"> XBOX ONE</label>
+            <label for="SWITCH"><input id="MH" type="checkbox" name="plateforme[]" value="SWITCH">SWITCH</label>
+            <label for="PS5"><input id="OV" type="checkbox" name="plateforme[]" value="PS5"> PS5</label>
+            <label for="XBOX SERIE X"><input id="RK" type="checkbox" name="plateforme[]" value="XBOX SERIE X"> XBOX SERIE X</label>
+            <label for="XBOX SERIE S"><input id="Among us" type="checkbox" name="plateforme[]" value="XBOX SERIE S"> XBOX SERIE S</label>
           
       </div>
       <div>
@@ -115,14 +115,14 @@ if(isset($_POST['mail']) AND isset($_POST['password1']) AND isset($_POST['préno
    
     <div>
       <legend>Choisissez vos jeux favoris</legend>
-      <label for="fortnite"><input id="fortnite" type="checkbox" name="jeux" value="fortnite"> Fortnite</label>
-      <label for="LOL"><input id="LOL" type="checkbox" name="jeux" value="LOL"> LEAGUE Of LEGEND</label>
-      <label for="COD"><input id="COD" type="checkbox" name="jeux" value="COD"> CALL OF DUTY</label>
-      <label for="MH"><input id="MH" type="checkbox" name="jeux" value="MH"> MONSTER HUNTER</label>
-      <label for="OV"><input id="OV" type="checkbox" name="jeux" value="OV"> OVERWATCH</label>
-      <label for="RK"><input id="RK" type="checkbox" name="jeux" value="RK"> ROCKET LEAGUE</label>
-      <label for="Among US"><input id="Among us" type="checkbox" name="jeux" value="Among US"> AMONG US</label>
-      <label for="FIFA"><input id="FIFA" type="checkbox" name="jeux" value="FIFA"> FIFA 21</label>
+      <label for="fortnite"><input id="fortnite" type="checkbox" name="jeux[]" value="fortnite"> Fortnite</label>
+      <label for="LOL"><input id="LOL" type="checkbox" name="jeux[]" value="LOL"> LEAGUE Of LEGEND</label>
+      <label for="COD"><input id="COD" type="checkbox" name="jeux[]" value="COD"> CALL OF DUTY</label>
+      <label for="MH"><input id="MH" type="checkbox" name="jeux[]" value="MH"> MONSTER HUNTER</label>
+      <label for="OV"><input id="OV" type="checkbox" name="jeux[]" value="OV"> OVERWATCH</label>
+      <label for="RK"><input id="RK" type="checkbox" name="jeux[]" value="RK"> ROCKET LEAGUE</label>
+      <label for="Among US"><input id="Among us" type="checkbox" name="jeux[]" value="Among US"> AMONG US</label>
+      <label for="FIFA"><input id="FIFA" type="checkbox" name="jeux[]" value="FIFA"> FIFA 21</label>
     </div>
     
     <input type="submit" name="inscription" value="Je crée mon compte!">
