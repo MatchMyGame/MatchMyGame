@@ -1,7 +1,7 @@
-/*enzo */
 *{
   margin:0;
   padding:0;
+  background-color: white;
 }
  body, html{height:100%;}
  body{
@@ -13,16 +13,28 @@
 }
 
 footer{
- background-color:#272727;
+ background-color: #EEF4F4;
  bottom:0;
  width:100%;
  padding-top:25px;
  height:50px;
  margin-top: 50px;
 }
-
+#footer {
+  background-color:#EEF4F4;
+}
+#footer a{
+  background-color: #EEF4F4;
+  margin-right: 100px;
+  color: #848484;
+  text-decoration: none;
+}
+#footer a:hover{
+  color: #e74c3c;
+  transition: all 0.2s ease-in-out;
+}
 body {
-  background: #34495e;
+  
   font: normal 300 18px "Roboto", sans-serif;
 }
  
@@ -103,25 +115,13 @@ li {
     margin: 0;
 
 }
+/*.afficher_user {
+ border-width:1px;
+ border-style:solid;
+ border-color: white;
+ width: 150px;
+ height: 70px;
+ background-color: red;
 
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+}
+*/

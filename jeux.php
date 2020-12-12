@@ -4,7 +4,7 @@
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
 <title>PTUT</title>
-<link rel="stylesheet" href="PTUT.css" />
+<link rel="stylesheet" href="style.css" />
 
 </head>
 
@@ -16,14 +16,14 @@
 
 		<div class="presentation_jeux">
 
-			<a href="index.php"><img class="img_jeux" src="image/rl.jpg"></a>
+			<a href="game.php?jeu=Rocket League"><img class="img_jeux" src="image/rl.jpg"></a>
 			
 
 		</div>
 
 		<div class="presentation_jeux">
 
-			<a href="index.php"><img class="img_jeux" src="image/rl.jpg"></a>
+			<a href="game.php?jeu=R6"><img class="img_jeux" src="image/r6.jpg"></a>
 			
 
 		</div>
@@ -31,7 +31,7 @@
 
 		<div class="presentation_jeux">
 
-			<a href="index.php"><img class="img_jeux" src="image/rl.jpg"></a>
+			<a href="game.php?jeu=fortnite"><img class="img_jeux" src="image/fortnite.jpg"></a>
 			
 
 		</div>

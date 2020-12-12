@@ -17,7 +17,7 @@ foreach ($getUser->fetchAll() as $data) {
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
 <title>MatchMyGame</title>
-<link rel="stylesheet" href="PTUT.css" />
+<link rel="stylesheet" href="style.css" />
 
 
 </head>

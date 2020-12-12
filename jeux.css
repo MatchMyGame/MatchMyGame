@@ -1,0 +1,24 @@
+.afficher_user {
+
+	border-width:1px;
+	border-style:solid;
+	border-color: white;
+	width: 300px;
+	height: 100px;
+	margin: 0 auto;
+	margin-top: 30px;
+	background-color: #EEF4F4;
+}
+.info_user {
+	color: #848484;
+	margin-top: 10px;
+	margin-left: 5px;
+	display: flex;
+	background-color: #EEF4F4;
+	text-justify: auto;
+
+}
+.info_user p{
+	background-color: #EEF4F4;
+	
+}
