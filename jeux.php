@@ -16,7 +16,7 @@
 
 		<div class="presentation_jeux">
 
-			<a href="game.php?jeu=Rocket League"><img class="img_jeux" src="image/rl.jpg"></a>
+			<a href="game.php?jeu=RL"><img class="img_jeux" src="image/rl.jpg"></a>
 			
 
 		</div>
