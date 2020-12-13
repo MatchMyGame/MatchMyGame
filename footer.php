@@ -1,8 +1,8 @@
 <footer>
 	<div id="footer"> 
 
-			<a href="#changer">Mentions légales </a>
-			<a href="#contacter"s>Nous contacter</a>
+			<a href="légales.html">Mentions légales </a>
+			<a href="confidentialité.html"s>Politique de confidentialité</a>
 		
 	</div> 
 </footer>	

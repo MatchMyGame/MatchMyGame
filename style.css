@@ -41,7 +41,7 @@ body {
 #menu-nav {
   max-width: 1000px;
   margin: 130px auto;
-  background-color: #ecf0f1;
+  background-color: #EEF4F4;
   border-radius: 4px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
@@ -79,7 +79,7 @@ body {
   left: 50%;
   bottom: 0;
   height: 2px;
-  background-color: #e74c3c;
+  background-color:#EEF4F4;
 }
 #navigation-bar a:hover::before {
   right: 0;
@@ -115,6 +115,7 @@ li {
     margin: 0;
 
 }
+
 /*.afficher_user {
  border-width:1px;
  border-style:solid;

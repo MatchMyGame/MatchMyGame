@@ -124,9 +124,9 @@ if(isset($_POST['mail']) AND isset($_POST['password1']) AND isset($_POST['préno
       <label for="Among US"><input id="Among us" type="checkbox" name="jeux[]" value="Among US"> AMONG US</label>
       <label for="FIFA"><input id="FIFA" type="checkbox" name="jeux[]" value="FIFA"> FIFA 21</label>
     </div>
-    
-    <label for=""><input type="checkbox" value="politique" required="required"> Acceptez vous nôtre politique de conidentialité</label> <br>
-
+    <div id="mention">
+      <label for=""><input type="checkbox" value="politique" required="required"> En cliquant sur ce bouton vous acceptez nôtre <a href="conidentialité.html">politique de confidentialité</a> mais également les <a href="légales.html">mentions légales</a></label> <br>
+    </div>
     <input type="submit" name="inscription" value="Je crée mon compte!">
 
 
