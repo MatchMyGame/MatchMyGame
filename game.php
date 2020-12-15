@@ -13,11 +13,11 @@ $nomJeux = array('R6' => 'Rainbow Six Siege' ,'LOL' => 'League of Legends','COD'
 
 <!DOCTYPE html>
 <html lang="fr">
-
+<div id="main">
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
 <title>PTUT</title>
-<link rel="stylesheet" href="style.css" />
+<link rel="stylesheet" href="styles.css" />
 <link rel="stylesheet" href="jeux.css" />
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.css"> 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -27,7 +27,7 @@ $nomJeux = array('R6' => 'Rainbow Six Siege' ,'LOL' => 'League of Legends','COD'
 
 </head>
 
-<div id="main">
+
 	<body>
 		<?php include('header.php') ?>
 
