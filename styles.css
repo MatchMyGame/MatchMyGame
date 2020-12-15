@@ -1,20 +1,20 @@
-/**{
+*{
   margin:0;
   padding:0;
  
 
 }
 
-body, html{height:100%;}*/
+body, html{height:100%;}
  body{
   text-align:center;
-  
+  background-color:#DDEEFA; 
   
   font: normal 300 18px "Roboto", sans-serif;
 }
 #main{
   height: 100%;
-  background: linear-gradient( #D6E8F6, white);
+  /*background: linear-gradient( #D6E8F6, white);*/
   margin:0 auto;
  
 }
@@ -22,8 +22,8 @@ p {
   text-justify: auto;
 }
 
-footer{
- background-color: #D6E8F6;
+/*footer{
+ background-color:#2D373F;
  
  bottom:0;
  width:100%;
@@ -31,14 +31,21 @@ footer{
  height:10px;
  margin-top: 50px;
  margin-bottom: 25px;
-}
+}*/
 #footer {
-  background-color:#D6E8F6;
+  margin-top: 30px;
+  
+  position: absolute;
+  
+  margin-bottom: auto;
+  width:100%;
+  height:40px;
+  background-color:#2D373F;
 }
 #footer a{
-  background-color: #D6E8F6;
+  background-color: #2D373F;
   margin-right: 100px;
-  color: #848484;
+  color: white;
   text-decoration: none;
 }
 #footer a:hover{
@@ -48,9 +55,10 @@ footer{
 
  
 #menu-nav {
-  max-width: 1000px;
-  margin: 130px auto;
-  background-color: #EEF4F4;
+  max-width: 100%;
+  margin-top:auto;
+  margin-bottom: 50px;
+  background-color: #2D373F;
   border-radius: 4px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
@@ -88,7 +96,7 @@ footer{
   left: 50%;
   bottom: 0;
   height: 2px;
-  background-color:#EEF4F4;
+  background-color: #e74c3c;
 }
 #navigation-bar a:hover::before {
   right: 0;

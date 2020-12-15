@@ -33,7 +33,7 @@ foreach ($getUser->fetchAll() as $data) {
 		
 		    <p>Bonjour à tous les gamers bienvenue sur MMG---->(Match My Game) un site de rencontre dans le domaine des jeux videos.</p>
 		    <p>Si vous avez des difficultées a vous faire des amis mais que vous adorez jouer au jeux videos alors ce site est fait pour vous!</p>
-		    <p>Le principe est simple, il suit de vous inscrire.</p>
+		    <p>Le principe est simple, il suffit de vous inscrire.</p>
 		    <p> Une fois inscrit le tour est joué et vous pouvez faire de nouvelle rencontre. </p>  
 
 
