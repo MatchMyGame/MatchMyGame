@@ -12,6 +12,9 @@
   
   margin:0 auto;
 }
+p {
+  text-justify: auto;
+}
 
 footer{
  background-color: #EEF4F4;

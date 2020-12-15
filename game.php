@@ -32,8 +32,8 @@ $nomJeux = array('R6' => 'Rainbow Six Siege' ,'LOL' => 'League of Legends','COD'
 		<?php include('header.php') ?>
 
 
-		<h2> <?php echo $nomJeux[$_GET['jeu']]; ?></h2>	
-		<br>
+		<h2 id="titre_jeu"> <?php echo $nomJeux[$_GET['jeu']]; ?></h2>	
+
 	
 <table id="table">
 	<thead>
