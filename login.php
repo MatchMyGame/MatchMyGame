@@ -35,7 +35,7 @@ if(isset($_POST['mail']) AND isset($_POST['password']) AND !empty($_POST['mail']
 
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="style.css" />
 <link rel="stylesheet" href="formulaire.css" />
  
 

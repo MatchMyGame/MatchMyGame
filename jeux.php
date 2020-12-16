@@ -4,7 +4,7 @@
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
 <title>PTUT</title>
-<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="style.css" />
 
 </head>
 

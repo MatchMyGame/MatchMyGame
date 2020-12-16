@@ -10,8 +10,7 @@
 			  <li><a href="compte.php"><i class="fa fa-rss"></i> <span>Mon compte</span></a></li>
 		    </ul>
 		  </div>
-  
   		</div>
-		  <h1>Match My Game</h1>
+		  <h1 class="titre">Match My Game</h1>
 
 		 </header>
