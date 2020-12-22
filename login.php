@@ -35,14 +35,14 @@ if(isset($_POST['mail']) AND isset($_POST['password']) AND !empty($_POST['mail']
 
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-<link rel="stylesheet" href="style.css" />
+<link rel="stylesheet" href="styles.css?v=<?=time();?>" />
 <link rel="stylesheet" href="formulaire.css" />
  
 
   <?php include('header.php') ?>
 
 <h2>Se connecter </h2>
-<form role="form" method="POST">
+<form class="connection" role="form" method="POST">
 
             <fieldset>
               <div class="form">
@@ -57,8 +57,7 @@ if(isset($_POST['mail']) AND isset($_POST['password']) AND !empty($_POST['mail']
             </fieldset>
 </form>
 
-<a href="formulaire.php"> Je n'ai pas encore de compte </a>
-
+ <button onclick="window.location.href = 'formulaire.php';">Je n'ai pas encore de compte</button>
 
 
 <?php include('footer.php') ?>

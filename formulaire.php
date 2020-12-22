@@ -49,13 +49,13 @@ if(isset($_POST['mail']) AND isset($_POST['password1']) AND isset($_POST['préno
 <html lang="fr">
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-<link rel="stylesheet" href="style.css" />
+<link rel="stylesheet" href="styles.css" />
 <link rel="stylesheet" href="formulaire.css" />
 <?php include('header.php') ?>
 
 <h2>Formulaire d'inscription </h2>
 
-<form action="" method="post">
+<form id="inscription" action="" method="post">
   <fieldset>
     <?php 
     if (isset($error)){
@@ -125,7 +125,7 @@ if(isset($_POST['mail']) AND isset($_POST['password1']) AND isset($_POST['préno
       <label for="FIFA"><input id="FIFA" type="checkbox" name="jeux[]" value="FIFA"> FIFA 21</label>
     </div>
     <div id="mention">
-      <label for=""><input type="checkbox" value="politique" required="required"> En cliquant sur ce bouton vous acceptez nôtre <a href="conidentialité.html">politique de confidentialité</a> mais également les <a href="légales.html">mentions légales</a></label> <br>
+      <label for=""><input type="checkbox" value="politique" required="required"> En cliquant sur ce bouton vous acceptez nôtre <a href="confidentialité.html">politique de confidentialité</a> mais également les <a href="legales.html">mentions légales</a></label> <br>
     </div>
     <input type="submit" name="inscription" value="Je crée mon compte!">
 
