@@ -28,7 +28,7 @@ foreach ($getUser->fetchAll() as $data) {
 		<?php include('header.php') ?>
 		<!--<button onclick="window.location.href = 'login.php';">Se connecter</button>-->
 	
-
+        <a href="login.php"> se connecter</a>
 	
 		<div  id="presentation">
 		    <p>Bonjour à tous les gamers bienvenue sur MMG---->(Match My Game) un site de rencontre dans le domaine des jeux videos.

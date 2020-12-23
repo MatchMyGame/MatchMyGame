@@ -17,7 +17,7 @@ if(isset($_POST['mail']) AND isset($_POST['password']) AND !empty($_POST['mail']
         $_SESSION['game'] = $user['game'];
 
         
-          Header("Location: index.php");
+         header("Location:compte.php?id=".$_SESSION['id']);
         
       }else{
         $error = "Mot de passe incorect.";
