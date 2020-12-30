@@ -23,6 +23,16 @@ if(!(isset($_SESSION['idUser']) AND !empty($_SESSION['idUser']))){
 	      $insertmail->execute(array($newmail, $_SESSION['idUser']));
 	      
 	   }
+	   if(isset($_POST['plateforme2']) AND !empty($_POST['plateforme2'])){ 
+	      $plat2 = json_encode($_POST['plateforme2']);
+	      $insertplat = $bdd->prepare("UPDATE user SET plateforme = ? WHERE idUser = ?");
+	      $insertplat->execute(array($plat2, $_SESSION['idUser']));
+	   }
+	    if(isset($_POST['jeux2']) AND !empty($_POST['jeux2'])){ 
+          $jeux2 = json_encode($_POST['jeux2']);
+	      $insertjeux = $bdd->prepare("UPDATE user SET game = ? WHERE idUser = ?");
+	      $insertjeux->execute(array($jeux2, $_SESSION['idUser']));
+	   }
 	   if(isset($_POST['newmdp1']) AND !empty($_POST['newmdp1']) AND isset($_POST['newmdp2']) AND !empty($_POST['newmdp2'])) {
 	   
 	      if($_POST['newmdp1'] == $_POST['newmdp2']) {
@@ -113,16 +123,15 @@ if(!(isset($_SESSION['idUser']) AND !empty($_SESSION['idUser']))){
 				      <br>
 				      <br>
 
-				     <!-- <div>
+				      <div>
 				          <legend>Renseigner vos plateformes</legend> 
 				          <br>
-				            <label for="PS4"><input id="fortnite" type="checkbox" name="plateforme[]" value="PS4"> PS4</label>
-				            <label for="PC"><input id="LOL" type="checkbox" name="plateforme[]" value="PC"> PC</label>
-				            <label for="XBOX ONE"><input id="COD" type="checkbox" name="plateforme[]" value="XBOX ONE"> XBOX ONE</label>
-				            <label for="SWITCH"><input id="MH" type="checkbox" name="plateforme[]" value="SWITCH">SWITCH</label>
-				            <label for="PS5"><input id="OV" type="checkbox" name="plateforme[]" value="PS5"> PS5</label>
-				            <label for="XBOX SERIE X"><input id="RK" type="checkbox" name="plateforme[]" value="XBOX SERIE X"> XBOX SERIE X</label>
-				            <label for="XBOX SERIE S"><input id="Among us" type="checkbox" name="plateforme[]" value="XBOX SERIE S"> XBOX SERIE S</label>
+				            <label for="PS4"><input id="fortnite" type="checkbox" name="plateforme2[]" value="PS4"> PS4</label>
+				            <label for="PC"><input id="LOL" type="checkbox" name="plateforme2[]" value="PC"> PC</label>
+				            <label for="XBOX ONE"><input id="COD" type="checkbox" name="plateforme2[]" value="XBOX ONE"> XBOX ONE</label>
+				            <label for="SWITCH"><input id="MH" type="checkbox" name="plateforme2[]" value="SWITCH">SWITCH</label>
+				            <label for="PS5"><input id="OV" type="checkbox" name="plateforme2[]" value="PS5"> PS5</label>
+				            
 				          
 				      </div>
 				      <br>
@@ -131,16 +140,16 @@ if(!(isset($_SESSION['idUser']) AND !empty($_SESSION['idUser']))){
 				    <div>
 				      <legend>Choissisez vos jeux</legend>
 				      <br>
-				      <label for="fortnite"><input id="fortnite" type="checkbox" name="jeux[]" value="Fortnite"> Fortnite</label>
-				      <label for="LOL"><input id="LOL" type="checkbox" name="jeux[]" value="LOL"> LEAGUE Of LEGEND</label>
-				      <label for="COD"><input id="COD" type="checkbox" name="jeux[]" value="COD"> CALL OF DUTY</label>
-				      <label for="MH"><input id="R6" type="checkbox" name="jeux[]" value="R6"> Rainbow six siege</label>
-				      <label for="OV"><input id="OV" type="checkbox" name="jeux[]" value="OV"> OVERWATCH</label>
-				      <label for="RK"><input id="RK" type="checkbox" name="jeux[]" value="RL"> ROCKET LEAGUE</label>
-				      <label for="Among US"><input id="Among us" type="checkbox" name="jeux[]" value="among"> AMONG US</label>
-				      <label for="FIFA"><input id="FIFA" type="checkbox" name="jeux[]" value="FIFA"> FIFA 21</label>
+				      <label for="fortnite"><input id="fortnite" type="checkbox" name="jeux2[]" value="Fortnite"> Fortnite</label>
+				      <label for="LOL"><input id="LOL" type="checkbox" name="jeux2[]" value="LOL"> LEAGUE Of LEGEND</label>
+				      <label for="COD"><input id="COD" type="checkbox" name="jeux2[]" value="COD"> CALL OF DUTY</label>
+				      <label for="MH"><input id="R6" type="checkbox" name="jeux2[]" value="R6"> Rainbow six siege</label>
+				      <label for="OV"><input id="OV" type="checkbox" name="jeux2[]" value="OV"> OVERWATCH</label>
+				      <label for="RK"><input id="RK" type="checkbox" name="jeux2[]" value="RL"> ROCKET LEAGUE</label>
+				      <label for="Among US"><input id="Among us" type="checkbox" name="jeux2[]" value="among"> AMONG US</label>
+				      <label for="FIFA"><input id="FIFA" type="checkbox" name="jeux2[]" value="FIFA"> FIFA 21</label>
 				    </div>
-				    <br> -->
+				    <br> 
 				     <br>
 				    
 				    <input type="submit"  value="Changer mes informations">

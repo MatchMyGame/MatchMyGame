@@ -55,7 +55,7 @@ if(isset($_POST['mail']) AND isset($_POST['password1']) AND isset($_POST['préno
 
 <h2>Formulaire d'inscription </h2>
 
-<form id="inscription" action="" method="post">
+<form class="inscription" action="" method="post">
   <fieldset>
     <?php 
     if (isset($error)){
@@ -116,12 +116,12 @@ if(isset($_POST['mail']) AND isset($_POST['password1']) AND isset($_POST['préno
     <div>
       <legend>Choisissez vos jeux favoris</legend>
       <label for="fortnite"><input id="fortnite" type="checkbox" name="jeux[]" value="Fortnite"> Fortnite</label>
-      <label for="LOL"><input id="LOL" type="checkbox" name="jeux[]" value="LOL"> LEAGUE Of LEGEND</label>
-      <label for="COD"><input id="COD" type="checkbox" name="jeux[]" value="COD"> CALL OF DUTY</label>
-      <label for="MH"><input id="R6" type="checkbox" name="jeux[]" value="R6"> Rainbow six siege</label>
-      <label for="OV"><input id="OV" type="checkbox" name="jeux[]" value="OV"> OVERWATCH</label>
-      <label for="RK"><input id="RK" type="checkbox" name="jeux[]" value="RL"> ROCKET LEAGUE</label>
-      <label for="Among US"><input id="Among us" type="checkbox" name="jeux[]" value="among"> AMONG US</label>
+      <label for="LOL"><input id="LOL" type="checkbox" name="jeux[]" value="LOL"> League of Legend</label>
+      <label for="COD"><input id="COD" type="checkbox" name="jeux[]" value="COD"> Call of Duty</label>
+      <label for="MH"><input id="R6" type="checkbox" name="jeux[]" value="R6"> Rainbow Six Siege</label>
+      <label for="OV"><input id="OV" type="checkbox" name="jeux[]" value="OV"> Overwatch</label>
+      <label for="RK"><input id="RK" type="checkbox" name="jeux[]" value="RL"> Rocket League</label>
+      <label for="Among US"><input id="Among us" type="checkbox" name="jeux[]" value="among"> Among US</label>
       <label for="FIFA"><input id="FIFA" type="checkbox" name="jeux[]" value="FIFA"> FIFA 21</label>
     </div>
     <div id="mention">
