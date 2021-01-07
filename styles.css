@@ -53,7 +53,13 @@ p {
   transition: all 0.2s ease-in-out;
 }
 
- 
+/*header {
+  display: flex;
+  justify-content: space-around;
+  max-width: 70%;
+  margin: auto;
+}*/
+
 #menu-nav {
   max-width: 100%;
   margin-top:auto;
@@ -204,5 +210,4 @@ h2 {
 
   text-align: center;
 }
-
 
