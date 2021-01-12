@@ -69,11 +69,7 @@ $nomJeux = array('R6' => 'Rainbow Six Siege' ,'LOL' => 'League of Legends','COD'
 	 		$(document).ready( function () {
     			$('#table').DataTable({
     				searching:true,
-    			 	
-    			});
-			} );
-			$('#table').DataTable({ 
-				pagingType: "simple_numbers",
+    				pagingType: "simple_numbers",
 				lengthMenu:[10,15,20,25],
 				pageLength: 10,
     			language: { 
@@ -96,7 +92,11 @@ $nomJeux = array('R6' => 'Rainbow Six Siege' ,'LOL' => 'League of Legends','COD'
      					sSortAscending: ": Trier par ordre croissant", "sSortDescending": ": Trier par ordre décroissant" 
     				} 
     			} 
-		}); 
+    
+    			 	
+    			});
+			} );
+			
 	 	</script>
 		
 		</body>	
