@@ -36,6 +36,40 @@
 
 		</div>
 
+		<div class="presentation_jeux">
+
+			<a href="game.php?jeu=LOL"><img class="img_jeux" src="image/lol.jpg"></a>
+			
+
+		</div>
+
+		<div class="presentation_jeux">
+
+			<a href="game.php?jeu=fifa"><img class="img_jeux" src="image/fifa.jpg"></a>
+			
+
+		</div>
+
+		<div class="presentation_jeux">
+
+			<a href="game.php?jeu=among"><img class="img_jeux" src="image/among.jpg"></a>
+			
+
+		</div>
+
+		<div class="presentation_jeux">
+
+			<a href="game.php?jeu=COD"><img class="img_jeux" src="image/cod.jpg"></a>
+			
+
+		</div>
+
+		<div class="presentation_jeux">
+
+			<a href="game.php?jeu=OV"><img class="img_jeux" src="image/OV.jpg"></a>
+			
+
+		</div>
 	
 
 		

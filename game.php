@@ -7,7 +7,7 @@ $getuser = $bdd->query("SELECT discord,plateforme,description FROM user WHERE ga
 /*while ($donnees = $getuser->fetch()) {
 	echo '<p>'.$donnees['discord'].'-'. $donnees['plateforme'].'</p>';
 }*/
-$nomJeux = array('R6' => 'Rainbow Six Siege' ,'LOL' => 'League of Legends','COD' => 'Call of Duty','OV' => 'Overwatch','among' => 'Among Us','RL' => 'Rocket League','fortnite' => 'Fortnite', );
+$nomJeux = array('R6' => 'Rainbow Six Siege' ,'LOL' => 'League of Legends','COD' => 'Call of Duty','OV' => 'Overwatch','among' => 'Among Us','RL' => 'Rocket League','fortnite' => 'Fortnite', 'fifa' => 'Fifa 21' );
 
 ?>
 
