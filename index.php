@@ -30,7 +30,9 @@ foreach ($getUser->fetchAll() as $data) {
 		<!--<button onclick="window.location.href = 'login.php';">Se connecter</button>-->
 	
         
-	
+		<img id="logo" src="image/logo.jpg">
+		<br>
+		<br>
 		<div  id="presentation">
 		    <p>Bonjour à tous les gamers bienvenue sur Match My Game un site de rencontre dans le domaine des jeux videos.
 		    Si vous avez des difficultés a vous faire des amis mais que vous adorez jouer au jeux videos alors ce site est fait pour vous!
@@ -49,7 +51,25 @@ foreach ($getUser->fetchAll() as $data) {
 
 			<div class="img_index">
 
-				<img class="img_jeux" src="image/manettes.jpg">
+				<img class="img_jeux" src="image/gamer.jpg">
+				
+
+			</div>
+			<div class="img_index">
+
+				<img class="img_jeux" src="image/tournoi.jpg">
+				
+
+			</div>
+			<div class="img_index">
+
+				<img class="img_jeux" src="image/gam.jpg">
+				
+
+			</div>
+			<div class="img_index">
+
+				<img class="img_jeux" src="image/amis.jpg">
 				
 
 			</div>

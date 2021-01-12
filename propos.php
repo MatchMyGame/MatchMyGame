@@ -23,10 +23,25 @@
        
         </ul> 
 <br>
-<p>
-Enzo:  Jeune étudiant âgé de 19ans, passioné par le domaine des jeux videos et actuellement en IUT  informatique est ici pour transmettre son savoir et sa bonne humeur.
-
-Damien: Jeune étudiant âgé de 18ans, passioné lui aussi par l'informatique et actuellement en IUT informatique est ici pour être au plus près de vous afin de transmettre sa passion et son savoir sur l'informartique mais aussi pour jouer et discuter avec vous.</p>
+<br>
+<br>
+<h2>L'équipe de Match My Game</h2>
+<div id="equipe">
+	<div class="equipier">
+		<div class="avatar"><img src="image/avatar.png"></div>
+		<div>
+			<p>
+				Enzo:  Jeune étudiant âgé de 19ans, passioné par le domaine des jeux videos et actuellement en IUT  informatique est ici pour transmettre son savoir et sa bonne humeur.
+			</p>
+		</div>
+	</div>
+	<div class="equipier">
+		<div class="avatar"><img src="image/avatar.png"></div>
+		<div>
+			<p> Damien: Jeune étudiant âgé de 18ans, passioné lui aussi par l'informatique et actuellement en IUT informatique est ici pour être au plus près de vous afin de transmettre sa passion et son savoir sur l'informartique mais aussi pour jouer et discuter avec vous.</p>
+		</div>
+	</div>
+</div>
 	<?php include('footer.php') ?>
 	</body> 
 </div>
