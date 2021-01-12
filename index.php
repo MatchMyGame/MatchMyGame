@@ -39,11 +39,20 @@ foreach ($getUser->fetchAll() as $data) {
 		    </p>  
 		</div>
 
-		<div id="img_index">
+		<div id="images">
+			<div class="img_index">
 
-			<img class="img_jeux" src="image/game.jpg">
-			
+				<img class="img_jeux" src="image/game.jpg">
+				
 
+			</div>
+
+			<div class="img_index">
+
+				<img class="img_jeux" src="image/manettes.jpg">
+				
+
+			</div>
 		</div>
 
 

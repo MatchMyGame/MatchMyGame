@@ -3,11 +3,18 @@
   margin-bottom: 10px;
 }
 
-#img_index {
+.img_index {
 	margin:20px;
+	height: 20%;
+	width: 15%;
 	
 }
-#img_index img{
-	height: 20%;
-    width: 20%;
+.img_index img{
+	height: 100%;
+	width: 100%;
+}
+#images {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
 }
