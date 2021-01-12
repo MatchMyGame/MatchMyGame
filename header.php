@@ -6,7 +6,7 @@
 		    	
 		      		<li><a href="index.php"><i class="fa fa-home"></i><span>Accueil</span></a></li>
 
-		     		<li><a href="compte.php"><i class="fa fa-rss"></i> <span>A propos</span></a></li>
+		     		<li><a href="propos.php"><i class="fa fa-rss"></i> <span>A propos</span></a></li>
 			  	
 		      		<li><a href="jeux.php"><i class="fa fa-handshake"></i><span>Jeux</span></a></li>
 		    	
