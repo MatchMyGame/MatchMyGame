@@ -1,5 +1,13 @@
 .info {
   text-align: center;
   margin-bottom: 10px;
+}
 
+#img_index {
+	margin:20px;
+	
+}
+#img_index img{
+	height: 20%;
+    width: 20%;
 }

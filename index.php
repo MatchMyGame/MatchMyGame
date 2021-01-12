@@ -18,6 +18,7 @@ foreach ($getUser->fetchAll() as $data) {
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
 <title>Match My Game</title>
 <link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="style2.css" />
 
 
 </head>
@@ -31,10 +32,18 @@ foreach ($getUser->fetchAll() as $data) {
         
 	
 		<div  id="presentation">
-		    <p>Bonjour à tous les gamers bienvenue sur MMG---->(Match My Game) un site de rencontre dans le domaine des jeux videos.
+		    <p>Bonjour à tous les gamers bienvenue sur Match My Game un site de rencontre dans le domaine des jeux videos.
 		    Si vous avez des difficultés a vous faire des amis mais que vous adorez jouer au jeux videos alors ce site est fait pour vous!
-		    Le principe est simple, il suffit de vous inscrire.
-		    Une fois inscrit le tour est joué et vous pouvez faire de nouvelle rencontre. </p>  
+		    N'hésitez pas! Inscrivez-vous pour rencontrer des joueurs du monde entier!
+		    
+		    </p>  
+		</div>
+
+		<div id="img_index">
+
+			<img class="img_jeux" src="image/game.jpg">
+			
+
 		</div>
 
 

@@ -47,6 +47,9 @@ $nomJeux = array('R6' => 'Rainbow Six Siege' ,'LOL' => 'League of Legends','COD'
 	while ($donnees = $getuser->fetch()) {
 	echo '<tr>' ;
 	echo	'<td>'.$donnees['discord'].'</td>';
+	/**foreach (json_decode($_getuser['plateforme'],1) as $p) {
+				
+	} */
 	echo	'<td>'.$donnees['plateforme'].'</td>';
 	echo	'<td>'.$donnees['description'].'</td>';				
 	echo '</tr>';
