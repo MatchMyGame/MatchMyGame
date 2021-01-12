@@ -167,16 +167,16 @@ li {
 
 button {
 
-  float: right;
+  border-radius: 10px;
   background-color: #2D373F;
   border: none;
   color: #848484;
-  padding: 10px 15px;
+  padding: 5px 10px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 20px;
-  margin-bottom: 20px;
+  margin: 15px;
   cursor: pointer;
 }
 button:hover {
@@ -210,4 +210,5 @@ h2 {
 
   text-align: center;
 }
+
 

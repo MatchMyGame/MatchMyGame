@@ -16,7 +16,7 @@ foreach ($getUser->fetchAll() as $data) {
 
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-<title>MatchMyGame</title>
+<title>Match My Game</title>
 <link rel="stylesheet" href="styles.css" />
 
 
@@ -28,7 +28,7 @@ foreach ($getUser->fetchAll() as $data) {
 		<?php include('header.php') ?>
 		<!--<button onclick="window.location.href = 'login.php';">Se connecter</button>-->
 	
-        <a href="login.php"> se connecter</a>
+        
 	
 		<div  id="presentation">
 		    <p>Bonjour à tous les gamers bienvenue sur MMG---->(Match My Game) un site de rencontre dans le domaine des jeux videos.

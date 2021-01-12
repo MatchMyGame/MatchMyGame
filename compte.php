@@ -52,18 +52,20 @@ if(!(isset($_SESSION['idUser']) AND !empty($_SESSION['idUser']))){
 
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-<title>PTUT</title>
+<title>Match My Game</title>
 <link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="style2.css" />
 
 </head>
 
 <div id="main">
 	<body>
 		<?php include('header.php') ?>
+		<div class="info">
 			<p>Bienvenue <?=$_SESSION['prénom'];?> !</p>
 			Pseudo discord : <?=$_SESSION['discord'];?><br />
 			Mail : <?=$_SESSION['mail'];?><br />
-			Les plateformes sur lesquelles vous jouez :<br />
+			Les plateformes sur lesquelles vous jouez :
 			<ul>
 			<?php
 			foreach (json_decode($_SESSION['plateforme'],1) as $p) {
@@ -71,14 +73,18 @@ if(!(isset($_SESSION['idUser']) AND !empty($_SESSION['idUser']))){
 			} 
 			?>
 			</ul>
-			<p>Les jeux auquelles vous jouez :</p> <br />
+			<p>Les jeux auquelles vous jouez :</p> 
 			<?php
 			foreach (json_decode($_SESSION['game'],1) as $g) {
 				echo "<li>".$g.'</li>';
 			} 
 			?>
-			<a href="deconnexion.php">Se déconnecter</a>
 
+			
+			<button onclick="window.location.href = 'deconnexion.php';">Se Déconnecter</button>
+		</div>
+
+			<div class="ino">
 			<form class="inscription"  action="" method="post">
 				<fieldset>
 				    <?php 
@@ -91,7 +97,7 @@ if(!(isset($_SESSION['idUser']) AND !empty($_SESSION['idUser']))){
 				    
 				    }
 				    ?>
-				    <p><i>Vous pouvez modifier votre mot de passe, modifier les jeux auquels vous jouez ainsi que les plateformes sur lesquelles vous jouez</i></p>
+				    <p><i>Vous pouvez modifier votre mot de passe, les jeux auquels vous jouez ainsi que les plateformes sur lesquelles vous jouez</i></p>
 				    
 
 
@@ -159,6 +165,7 @@ if(!(isset($_SESSION['idUser']) AND !empty($_SESSION['idUser']))){
 
 				
 			</form>
+			</div>
 			 <?php if(isset($msg)) { echo $msg; } ?>
 
 		<?php include('footer.php') ?>  

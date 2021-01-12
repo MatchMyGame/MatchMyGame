@@ -67,7 +67,7 @@ if(isset($_POST['mail']) AND isset($_POST['password1']) AND isset($_POST['préno
     
     }
     ?>
-    <p><i>Complétez le formulaire. Tout les champs marqué sont obligatoires.</i></p>
+   
     
 
       <div class="form">
@@ -103,12 +103,12 @@ if(isset($_POST['mail']) AND isset($_POST['password1']) AND isset($_POST['préno
             <label for="XBOX ONE"><input id="COD" type="checkbox" name="plateforme[]" value="XBOX ONE"> XBOX ONE</label>
             <label for="SWITCH"><input id="MH" type="checkbox" name="plateforme[]" value="SWITCH">SWITCH</label>
             <label for="PS5"><input id="OV" type="checkbox" name="plateforme[]" value="PS5"> PS5</label>
-            <label for="XBOX SERIE X"><input id="RK" type="checkbox" name="plateforme[]" value="XBOX SERIE X"> XBOX SERIE X</label>
-            <label for="XBOX SERIE S"><input id="Among us" type="checkbox" name="plateforme[]" value="XBOX SERIE S"> XBOX SERIE S</label>
+            <label for="XBOX SERIE S"><input id="Among us" type="checkbox" name="plateforme[]" value="XBOX SERIE"> XBOX SERIE</label>
           
       </div>
+       <p><i>Décrivez-vous (cette desrciption sera visible par tous), n'hésitez pas à renseigner vôtre niveau</i></p>
       <div>
-        <label >Décrivez-vous (cette desrciption sera visible par tous)</label>
+        
         <textarea id="description" name="description" ></textarea>
       </div>
     
